@@ -13,7 +13,6 @@ from tacotron.synthesize import tacotron_synthesize
 def prepare_run(args):
 	modified_hp = hparams.parse(args.hparams)
 	os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-	os.environ['CUDA_VISIBLE_DEVICES'] = '3'
 
 	run_name = args.name or args.tacotron_name or args.model
 	taco_checkpoint = os.path.join('logs-' + run_name, 'taco_' + args.checkpoint)
